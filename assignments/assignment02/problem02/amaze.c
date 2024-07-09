@@ -77,10 +77,25 @@ void amaze4(void) {
     printf("\n");
 }
 
+void amaze5(void) {
+    int i = 0;
+    printf("amaze5:\t\t");
+    amz5:
+    i++;
+    if (i <= 10) {
+        if (i % 2 == 1) {
+            printf("%d ", i);
+        }
+        goto amz5;
+    }
+    printf("\n");
+}
+
 int main(int argc, char ** argv){
     amazeWOW();
     amaze2();
     amaze3();
-    amaze4();    
-return 0;
+    amaze4();
+    amaze5();    
+    return 0;
 }
