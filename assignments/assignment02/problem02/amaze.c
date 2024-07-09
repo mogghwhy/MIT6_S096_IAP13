@@ -91,11 +91,29 @@ void amaze5(void) {
     printf("\n");
 }
 
+void amaze6(void) {
+    int i = 0;
+    i++;
+    printf("amaze6:\t\t");
+    while (i < 10) {
+    switch (i) {
+        case 1: printf("%d ", i); break;
+        case 3: printf("%d ", i); break;        
+        case 5: printf("%d ", i); break;                
+        case 7: printf("%d ", i); break;                        
+        case 9: printf("%d ", i); break;                                
+    }
+    i++;
+    }
+    printf("\n");
+}
+
 int main(int argc, char ** argv){
     amazeWOW();
     amaze2();
     amaze3();
     amaze4();
     amaze5();    
+    amaze6();
     return 0;
 }
