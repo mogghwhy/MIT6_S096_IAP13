@@ -12,7 +12,20 @@ void amazeWOW(void) {
     printf("\n");
 }
 
+void amaze2(void) {
+    int i = 0;
+    printf("amaze2:\t\t");
+    while (i <= 10) {
+        if (i % 2 == 1) {
+            printf("%d ", i);
+        }
+        i++;
+    }
+    printf("\n");
+}
+
 int main(int argc, char ** argv){
     amazeWOW();
+    amaze2();
 return 0;
 }
