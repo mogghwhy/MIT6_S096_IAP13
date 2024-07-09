@@ -108,6 +108,21 @@ void amaze6(void) {
     printf("\n");
 }
 
+void amaze7(void) {
+    int i = 0;    
+    printf("amaze7:\t\t");
+    increment:
+    i++;
+    if (i % 2 == 1) { 
+        printf("%d ", i);
+    }
+
+    if (i > 9) { goto end;}
+    else {goto increment;}
+    end:
+    printf("\n");
+}
+
 int main(int argc, char ** argv){
     amazeWOW();
     amaze2();
@@ -115,5 +130,6 @@ int main(int argc, char ** argv){
     amaze4();
     amaze5();    
     amaze6();
+    amaze7();    
     return 0;
 }
