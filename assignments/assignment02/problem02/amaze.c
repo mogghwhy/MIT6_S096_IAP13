@@ -24,8 +24,23 @@ void amaze2(void) {
     printf("\n");
 }
 
+void amaze3(void) {
+    int i = 0;
+    printf("amaze3:\t\t");
+    do {
+        if (i % 2 == 1) {
+            printf("%d ", i);
+        }
+        i++;
+    }
+    while (i <= 10);
+
+    printf("\n");
+}
+
 int main(int argc, char ** argv){
     amazeWOW();
     amaze2();
+    amaze3();
 return 0;
 }
