@@ -8,7 +8,7 @@ int main(void)
     *ptr = 'd';
     *(ptr+1) = 'o';
     *(str+2) = 'd';
-    *(ptr+3) = 'o';
+    ptr[3] = 'o';
     printf("%s\n", ptr);
     return 0;
 }
