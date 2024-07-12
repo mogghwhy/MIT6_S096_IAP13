@@ -13,7 +13,7 @@ void insert_node(int node_id, int data) {
 
 // Find the node with node_id, and return its data
 int find_node_data(int node_id) {
-	
+    return 0;	
 }
 
 ///***** OPTIONAL: Challenge yourself w/ deletion if you want ***///
