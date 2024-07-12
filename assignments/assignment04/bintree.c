@@ -14,6 +14,9 @@ void insert_node(int node_id, int data) {
     new_node->node_id = node_id;
     new_node->left = NULL;
     new_node->right = NULL;
+    if (root == NULL) {
+        root = new_node;
+    }
 }
 
 // Find the node with node_id, and return its data
