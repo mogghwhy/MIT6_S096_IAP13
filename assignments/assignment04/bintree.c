@@ -9,7 +9,11 @@ node *root = NULL;
 
 // Insert a new node into the binary tree with node_id and data
 void insert_node(int node_id, int data) {
-
+    node* new_node = (node*) malloc(sizeof(node));
+    new_node->data = data;
+    new_node->node_id = node_id;
+    new_node->left = NULL;
+    new_node->right = NULL;
 }
 
 // Find the node with node_id, and return its data
