@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <stdlib.h>
 #include "bintree.h"
 
 ///*** DO NOT CHANGE ANY FUNCTION DEFINITIONS ***///
