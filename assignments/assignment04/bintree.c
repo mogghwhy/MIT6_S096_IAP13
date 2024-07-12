@@ -14,6 +14,10 @@ void insert_node(int node_id, int data) {
     new_node->node_id = node_id;
     new_node->left = NULL;
     new_node->right = NULL;
+    bool not_set = true;    
+    while(not_set) {
+        node* parent = root;
+    }
     if (root == NULL) {
         root = new_node;
     }
