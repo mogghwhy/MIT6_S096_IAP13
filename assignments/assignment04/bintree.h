@@ -9,5 +9,6 @@ typedef struct node {
 ///*** DO NOT CHANGE ANY FUNCTION DEFINITIONS ***///
 // Declare the tree modification functions below...
 void insert_node(int node_id, int data);
+int find_node_data(int node_id);
 
 #endif
