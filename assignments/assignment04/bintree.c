@@ -93,10 +93,15 @@ int find_node_data(int node_id)
 
 int check_up(node *n)
 {
-    if (n->left == NULL && n->right == NULL)
-    {
-        free(n);
+    if (n == NULL)
+    {        
+        return 0;
     }
+
+    check_up(n->left);
+    check_up(n->right);
+    free(n);
+    return 0;
 }
 
 void clean_up(void)
