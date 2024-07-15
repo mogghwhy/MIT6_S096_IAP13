@@ -14,5 +14,5 @@ typedef struct node
 // Declare the tree modification functions below...
 void insert_node(int node_id, int data);
 int find_node_data(int node_id);
-
+int clean_up(node *n);
 #endif
