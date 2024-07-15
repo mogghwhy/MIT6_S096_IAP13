@@ -21,45 +21,45 @@ void insert_node(int node_id, int data)
     node *temp2 = root;
     while (temp2 != NULL)
     {
-        #ifdef DEBUG
+#ifdef DEBUG
         printf("temp2 is not NULL\n");
-        #endif
+#endif
         temp1 = temp2;
         if (new_node->node_id < temp2->node_id)
         {
-            #ifdef DEBUG
+#ifdef DEBUG
             printf("temp2 is left\n");
-            #endif
+#endif
             temp2 = temp2->left;
         }
         else
         {
-            #ifdef DEBUG
+#ifdef DEBUG
             printf("temp2 is right\n");
-            #endif
+#endif
             temp2 = temp2->right;
         }
     }
     if (temp1 == NULL)
     {
-        #ifdef DEBUG
+#ifdef DEBUG
         printf("temp1 is NULL\n");
         printf("temp1 is new node\n");
-        #endif
+#endif
         root = new_node;
     }
     else if (new_node->node_id < temp1->node_id)
     {
-        #ifdef DEBUG
+#ifdef DEBUG
         printf("temp1 left is new node\n");
-        #endif
+#endif
         temp1->left = new_node;
     }
     else
     {
-        #ifdef DEBUG
+#ifdef DEBUG
         printf("temp1 right is new node\n");
-        #endif
+#endif
         temp1->right = new_node;
     }
 }
@@ -89,6 +89,24 @@ int find_node_data(int node_id)
         }
     }
     return 0;
+}
+
+int check_up(node *n)
+{
+    if (n == NULL)
+    {        
+        return 0;
+    }
+
+    check_up(n->left);
+    check_up(n->right);
+    free(n);
+    return 0;
+}
+
+void clean_up(void)
+{
+    check_up(root);
 }
 
 ///***** OPTIONAL: Challenge yourself w/ deletion if you want ***///
