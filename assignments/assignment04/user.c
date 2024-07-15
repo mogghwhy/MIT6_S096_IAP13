@@ -11,7 +11,7 @@ int main() {
 	won't work!
 	*/
         int id = 4;	
-        insert_node(1,124);
+        insert_node(11,124);
 		#ifdef DEBUG
         printf("next node insertion\n");
 		#endif
