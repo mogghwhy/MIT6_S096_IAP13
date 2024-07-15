@@ -19,33 +19,75 @@ void insert_node(int node_id, int data)
 
     node *temp1 = NULL;
     node *temp2 = root;
-    while (temp2 != NULL) {
+    while (temp2 != NULL)
+    {
+        #ifdef DEBUG
         printf("temp2 is not NULL\n");
+        #endif
         temp1 = temp2;
-        if (new_node->node_id < temp2->node_id) {
+        if (new_node->node_id < temp2->node_id)
+        {
+            #ifdef DEBUG
             printf("temp2 is left\n");
-            temp2 = temp2->left; 
-        } else {
+            #endif
+            temp2 = temp2->left;
+        }
+        else
+        {
+            #ifdef DEBUG
             printf("temp2 is right\n");
+            #endif
             temp2 = temp2->right;
         }
     }
-    if (temp1 == NULL) {
-       printf("temp1 is NULL\n");
-       printf("temp1 is new node\n");
-       root = new_node;
-    } else if (new_node->node_id < temp1->node_id) {
-       printf("temp1 left is new node\n");
-       temp1->left = new_node;
-    } else {
-       printf("temp1 right is new node\n");
-       temp1->right = new_node;
+    if (temp1 == NULL)
+    {
+        #ifdef DEBUG
+        printf("temp1 is NULL\n");
+        printf("temp1 is new node\n");
+        #endif
+        root = new_node;
+    }
+    else if (new_node->node_id < temp1->node_id)
+    {
+        #ifdef DEBUG
+        printf("temp1 left is new node\n");
+        #endif
+        temp1->left = new_node;
+    }
+    else
+    {
+        #ifdef DEBUG
+        printf("temp1 right is new node\n");
+        #endif
+        temp1->right = new_node;
     }
 }
 
 // Find the node with node_id, and return its data
 int find_node_data(int node_id)
 {
+    node *temp1 = NULL;
+    if (root->node_id == node_id)
+    {
+        return root->data;
+    }
+    temp1 = root;
+    while (temp1 != NULL)
+    {
+        if (temp1->node_id > node_id)
+        {
+            temp1 = temp1->left;
+        }
+        else
+        {
+            temp1 = temp1->right;
+        }
+        if (temp1 != NULL && temp1->node_id == node_id)
+        {
+            return temp1->data;
+        }
+    }
     return 0;
 }
 

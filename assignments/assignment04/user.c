@@ -10,13 +10,26 @@ int main() {
 	argument or return types of the binary tree functions, our grading code
 	won't work!
 	*/
-        insert_node(1,124);
+        int id = 4;	
+        insert_node(11,124);
+		#ifdef DEBUG
         printf("next node insertion\n");
+		#endif
         insert_node(2,11);
+		#ifdef DEBUG
         printf("next node insertion\n");
+		#endif
         insert_node(3,51);
+		#ifdef DEBUG
         printf("next node insertion\n");
+		#endif
         insert_node(5,551);
+		#ifdef DEBUG
+        printf("next node insertion\n");
+		#endif
+        insert_node(4,555);		
+		printf("find node %i\n", id);
+		printf("node data %i\n",find_node_data(id));
 
 	return 0;
 }
