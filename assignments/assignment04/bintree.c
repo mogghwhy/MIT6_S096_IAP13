@@ -55,6 +55,27 @@ void insert_node(int node_id, int data)
 // Find the node with node_id, and return its data
 int find_node_data(int node_id)
 {
+    node *temp1 = NULL;
+    if (root->node_id == node_id)
+    {
+        return root->data;
+    }
+    temp1 = root;
+    while (temp1 != NULL)
+    {
+        if (temp1->node_id > node_id)
+        {
+            temp1 = temp1->left;
+        }
+        else
+        {
+            temp1 = temp1->right;
+        }
+        if (temp1 != NULL && temp1->node_id == node_id)
+        {
+            return temp1->data;
+        }
+    }
     return 0;
 }
 
