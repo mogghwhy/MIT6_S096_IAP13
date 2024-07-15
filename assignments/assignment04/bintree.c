@@ -19,27 +19,36 @@ void insert_node(int node_id, int data)
 
     node *temp1 = NULL;
     node *temp2 = root;
-    while (temp2 != NULL) {
+    while (temp2 != NULL)
+    {
         printf("temp2 is not NULL\n");
         temp1 = temp2;
-        if (new_node->node_id < temp2->node_id) {
+        if (new_node->node_id < temp2->node_id)
+        {
             printf("temp2 is left\n");
-            temp2 = temp2->left; 
-        } else {
+            temp2 = temp2->left;
+        }
+        else
+        {
             printf("temp2 is right\n");
             temp2 = temp2->right;
         }
     }
-    if (temp1 == NULL) {
-       printf("temp1 is NULL\n");
-       printf("temp1 is new node\n");
-       root = new_node;
-    } else if (new_node->node_id < temp1->node_id) {
-       printf("temp1 left is new node\n");
-       temp1->left = new_node;
-    } else {
-       printf("temp1 right is new node\n");
-       temp1->right = new_node;
+    if (temp1 == NULL)
+    {
+        printf("temp1 is NULL\n");
+        printf("temp1 is new node\n");
+        root = new_node;
+    }
+    else if (new_node->node_id < temp1->node_id)
+    {
+        printf("temp1 left is new node\n");
+        temp1->left = new_node;
+    }
+    else
+    {
+        printf("temp1 right is new node\n");
+        temp1->right = new_node;
     }
 }
 
