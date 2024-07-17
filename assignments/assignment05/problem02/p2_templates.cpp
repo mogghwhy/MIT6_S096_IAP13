@@ -4,7 +4,29 @@
     Your templated List class definition goes here.
 */
 
-
+class IntList {
+	int * list;
+	
+public:
+	int length;
+	
+	IntList(int len) {
+		list = new int[len];
+		length = len;
+	}
+	
+	~IntList() {
+		delete[] list;
+	}
+	
+	int get(int index) {
+		return list[index];
+	}
+	
+	void set(int index, int val) {
+		list[index] = val;
+	}
+};
 
 /*
     You shouldn't change the code below, unless you want to _temporarily_ change the main function while testing.
