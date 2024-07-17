@@ -4,26 +4,26 @@
     Your templated List class definition goes here.
 */
 
-class IntList {
-	int * list;
+template <class T > class List {
+	T * list;
 	
 public:
 	int length;
 	
-	IntList(int len) {
-		list = new int[len];
+	List(int len) {
+		list = new T[len];
 		length = len;
 	}
 	
-	~IntList() {
+	~List() {
 		delete[] list;
 	}
 	
-	int get(int index) {
+	T get(int index) {
 		return list[index];
 	}
 	
-	void set(int index, int val) {
+	void set(int index, T val) {
 		list[index] = val;
 	}
 };
