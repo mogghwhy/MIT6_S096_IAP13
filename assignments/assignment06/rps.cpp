@@ -4,6 +4,10 @@ using namespace std;
 
 class Tool {
 	/* Fill in */
+	private:
+		int strenght;
+		char type;
+		void setStrength(int);	
 };
 
 /*
