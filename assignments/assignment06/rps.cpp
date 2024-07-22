@@ -20,6 +20,10 @@ void Tool::setStrength(int s) {
 /*
 	Implement class Scissors
 */
+class Scissors: public Tool {
+	public:
+		Scissors(int s) : Tool('s') { Tool::setStrength(s); }
+};
 
 /*
 	Implement class Paper
