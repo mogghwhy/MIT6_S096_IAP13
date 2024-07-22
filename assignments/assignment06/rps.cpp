@@ -48,6 +48,8 @@ class Scissors: public Tool {
 };
 
 bool Scissors::fight(Tool d) {
+	this->restoreStrength();
+	d.restoreStrength();	
 	switch (d.getType())
 	{
 	case 'p':
@@ -59,8 +61,15 @@ bool Scissors::fight(Tool d) {
 	default:
 		break;
 	}
-	bool result = this->getStrength() < d.getStrength();
-	this->restoreStrength();
+	bool result = false;
+	if (getStrength() < d.getStrength())
+	{
+		result = false;
+	}
+	else
+	{
+		result = true;
+	};
 	return result;
 }
 
@@ -75,6 +84,8 @@ class Paper: public Tool {
 };
 
 bool Paper::fight(Tool d) {
+	restoreStrength();
+	d.restoreStrength();	
 	switch (d.getType())
 	{
 	case 'r':
@@ -86,8 +97,15 @@ bool Paper::fight(Tool d) {
 	default:
 		break;
 	}
-	bool result = this->getStrength() < d.getStrength();
-	this->restoreStrength();
+	bool result = false;
+	if (getStrength() < d.getStrength())
+	{
+		result = false;
+	}
+	else
+	{
+		result = true;
+	};
 	return result;
 }
 
@@ -102,6 +120,8 @@ class Rock: public Tool {
 };
 
 bool Rock::fight(Tool d) {
+	restoreStrength();
+	d.restoreStrength();
 	switch (d.getType())
 	{
 	case 's':
@@ -113,8 +133,7 @@ bool Rock::fight(Tool d) {
 	default:
 		break;
 	}
-	bool result = this->getStrength() < d.getStrength();
-	this->restoreStrength();
+	bool result = this->getStrength() < d.getStrength();	
 	return result;
 }
 
@@ -126,8 +145,8 @@ int main() {
 	Paper p1(7);
 	Rock r1(15);
 	cout << s1.fight(p1) << p1.fight(s1) << endl;
-	cout << p1.fight(r1) << r1.fight(p1) << endl;
-	cout << r1.fight(s1) << s1.fight(r1) << endl;
+	//cout << p1.fight(r1) << r1.fight(p1) << endl;
+	//cout << r1.fight(s1) << s1.fight(r1) << endl;
 
 	return 0;
 }
