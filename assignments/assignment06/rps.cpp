@@ -8,7 +8,7 @@ class Tool {
 		int strenght;
 		char type;
 	public:
-		Tool(int s, char t): strenght(s), type(t) {}
+		Tool(char t): type(t) {}
 		void setStrength(int s);
 
 };
