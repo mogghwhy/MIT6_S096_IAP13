@@ -9,7 +9,7 @@ class Tool {
 		char type;
 		const int strength_c;
 	public:
-		Tool(char t): type(t) {}
+		Tool(char t, int s): type(t), strength_c(s) { strength = s;};
 		void setStrength(int s);
 		bool fight(Tool);
 		~Tool() {};
