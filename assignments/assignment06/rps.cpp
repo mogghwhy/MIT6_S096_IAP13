@@ -78,7 +78,7 @@ bool Scissors::fight(Tool d) {
 */
 class Paper: public Tool {
 	public:
-		Paper(int s) : Tool('s', s) {};
+		Paper(int s) : Tool('p', s) {};
 		bool fight(Tool d);
 		~Paper() {};
 };
@@ -114,7 +114,7 @@ bool Paper::fight(Tool d) {
 */
 class Rock: public Tool {
 	public:
-		Rock(int s) : Tool('s', s) {};
+		Rock(int s) : Tool('r', s) {};
 		bool fight(Tool d);
 		~Rock() {};
 };
@@ -133,7 +133,15 @@ bool Rock::fight(Tool d) {
 	default:
 		break;
 	}
-	bool result = this->getStrength() < d.getStrength();	
+	bool result = false;
+	if (getStrength() < d.getStrength())
+	{
+		result = false;
+	}
+	else
+	{
+		result = true;
+	};
 	return result;
 }
 
@@ -145,8 +153,8 @@ int main() {
 	Paper p1(7);
 	Rock r1(15);
 	cout << s1.fight(p1) << p1.fight(s1) << endl;
-	//cout << p1.fight(r1) << r1.fight(p1) << endl;
-	//cout << r1.fight(s1) << s1.fight(r1) << endl;
+	cout << p1.fight(r1) << r1.fight(p1) << endl;
+	cout << r1.fight(s1) << s1.fight(r1) << endl;
 
 	return 0;
 }
