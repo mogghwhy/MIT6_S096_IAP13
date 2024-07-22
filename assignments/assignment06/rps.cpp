@@ -7,6 +7,7 @@ class Tool {
 	private:
 		int strength;
 		char type;
+		const int strength_c;
 	public:
 		Tool(char t): type(t) {}
 		void setStrength(int s);
