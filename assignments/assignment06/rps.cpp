@@ -25,14 +25,44 @@ void Tool::setStrength(int s) {
 	strength = s;
 }
 
+void Tool::restoreStrength(void) {
+	strength = strength_c;
+}
+
+void Tool::increaseStrength(void) {
+	strength = strength_c * 2;
+}
+
+void Tool::decreaseStrength(void) {
+	strength = strength_c / 2;
+}
+
 /*
 	Implement class Scissors
 */
 class Scissors: public Tool {
 	public:
-		Scissors(int s) : Tool('s') { Tool::setStrength(s); }
+		Scissors(int s) : Tool('s', s) {};
+		bool fight(Tool d);
 		~Scissors() {};
 };
+
+bool Scissors::fight(Tool d) {
+	switch (d.getType())
+	{
+	case 'p':
+		this->increaseStrength();
+		break;
+	case 'r':
+		this->decreaseStrength();
+		break;	
+	default:
+		break;
+	}
+	bool result = this->getStrength() < d.getStrength();
+	this->restoreStrength();
+	return result;
+}
 
 /*
 	Implement class Paper
