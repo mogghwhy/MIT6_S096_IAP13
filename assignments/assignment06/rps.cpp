@@ -7,8 +7,15 @@ class Tool {
 	private:
 		int strenght;
 		char type;
-		void setStrength(int);	
+	public:
+		Tool(int s, char t): strenght(s), type(t) {}
+		void setStrength(int s);
+
 };
+
+void Tool::setStrength(int s) {
+	strenght = s;
+}
 
 /*
 	Implement class Scissors
