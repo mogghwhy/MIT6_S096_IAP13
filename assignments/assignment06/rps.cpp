@@ -67,6 +67,29 @@ bool Scissors::fight(Tool d) {
 /*
 	Implement class Paper
 */
+class Paper: public Tool {
+	public:
+		Paper(int s) : Tool('s', s) {};
+		bool fight(Tool d);
+		~Paper() {};
+};
+
+bool Paper::fight(Tool d) {
+	switch (d.getType())
+	{
+	case 'r':
+		this->increaseStrength();
+		break;
+	case 's':
+		this->decreaseStrength();
+		break;	
+	default:
+		break;
+	}
+	bool result = this->getStrength() < d.getStrength();
+	this->restoreStrength();
+	return result;
+}
 
 /*
 	Implement class Rock
