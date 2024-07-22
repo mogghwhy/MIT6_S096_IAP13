@@ -12,6 +12,11 @@ class Tool {
 		Tool(char t, int s): type(t), strength_c(s) { strength = s;};
 		void setStrength(int s);
 		virtual bool fight(Tool d) { return false;}
+		char getType(void) { return type; }
+		int getStrength(void) { return strength; }
+		void restoreStrength(void);
+		void increaseStrength(void);
+		void decreaseStrength(void);
 		~Tool() {};
 
 };
