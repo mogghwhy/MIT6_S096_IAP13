@@ -5,7 +5,7 @@ using namespace std;
 class Tool {
 	/* Fill in */
 	private:
-		int strenght;
+		int strength;
 		char type;
 	public:
 		Tool(char t): type(t) {}
@@ -16,7 +16,7 @@ class Tool {
 };
 
 void Tool::setStrength(int s) {
-	strenght = s;
+	strength = s;
 }
 
 /*
