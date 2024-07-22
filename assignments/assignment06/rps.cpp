@@ -10,6 +10,7 @@ class Tool {
 	public:
 		Tool(char t): type(t) {}
 		void setStrength(int s);
+		bool fight(Tool);
 		~Tool() {};
 
 };
