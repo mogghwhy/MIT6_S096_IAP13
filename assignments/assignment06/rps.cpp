@@ -94,6 +94,29 @@ bool Paper::fight(Tool d) {
 /*
 	Implement class Rock
 */
+class Rock: public Tool {
+	public:
+		Rock(int s) : Tool('s', s) {};
+		bool fight(Tool d);
+		~Rock() {};
+};
+
+bool Rock::fight(Tool d) {
+	switch (d.getType())
+	{
+	case 's':
+		this->increaseStrength();
+		break;
+	case 'p':
+		this->decreaseStrength();
+		break;	
+	default:
+		break;
+	}
+	bool result = this->getStrength() < d.getStrength();
+	this->restoreStrength();
+	return result;
+}
 
 int main() {
 	// Example main function
