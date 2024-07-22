@@ -11,7 +11,7 @@ class Tool {
 	public:
 		Tool(char t, int s): type(t), strength_c(s) { strength = s;};
 		void setStrength(int s);
-		bool fight(Tool);
+		virtual bool fight(Tool d) { return false;}
 		~Tool() {};
 
 };
