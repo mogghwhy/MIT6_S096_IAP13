@@ -24,6 +24,7 @@ void Tool::setStrength(int s) {
 class Scissors: public Tool {
 	public:
 		Scissors(int s) : Tool('s') { Tool::setStrength(s); }
+		~Scissors() {};
 };
 
 /*
