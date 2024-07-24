@@ -83,5 +83,10 @@ int main(int argc, char *argv[]) {
 	fclose(f);
 	f = NULL;
 
+	/* free the allocated memory */
+		for (int row = 0; row < HEIGHT; row++) {
+		free(row_pointers[row]);
+	}
+
 	return 0;
 }
