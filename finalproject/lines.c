@@ -15,8 +15,15 @@ struct Pixel {
 int main(int argc, char *argv[]) {
 	srand(time(NULL));
 
+	FILE *f = NULL;
+
 	/* open PNG file for writing */
-	FILE *f = fopen("out.png", "wb");
+	if (argc == 2) {
+		f = fopen(argv[1], "wb");
+	} else {
+		f = fopen("out.png", "wb");
+	}
+	
 	if (!f) {
 		fprintf(stderr, "could not open out.png\n");
 		return 1;
@@ -57,9 +64,12 @@ int main(int argc, char *argv[]) {
 		int bar_height = rand() % HEIGHT;
 		for (int row = 0; row < HEIGHT; row++) {
 			if (HEIGHT - row <= bar_height) {
-				row_pointers[row][col].r = 255; // red
-				row_pointers[row][col].g = 0; // green
-				row_pointers[row][col].b = 0; // blue
+				int r = ((double)rand() / RAND_MAX) * 255;
+				int g = ((double)rand() / RAND_MAX) * 255;
+				int b = ((double)rand() / RAND_MAX) * 255;
+				row_pointers[row][col].r = r;//255; // red
+				row_pointers[row][col].g = g;//0; // green
+				row_pointers[row][col].b = b;//0; // blue
 				row_pointers[row][col].a = 255; // alpha (opacity)
 			} else {
 				row_pointers[row][col].r = 0; // red
